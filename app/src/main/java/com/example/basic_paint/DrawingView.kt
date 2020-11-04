@@ -22,6 +22,11 @@ class DrawingView(context:Context,attrs:AttributeSet):View(context,attrs) {
         setupDrawing()
     }
 
+    fun setcolor(newColor:String){
+        color=Color.parseColor(newColor)
+        mDrawPaint!!.color=color
+    }
+
     private fun setupDrawing(){
         mDrawPaint= Paint()
         mDrawPath=CustomPath(color,mBrushSize)
