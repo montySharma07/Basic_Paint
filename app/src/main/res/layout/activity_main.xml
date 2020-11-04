@@ -7,6 +7,8 @@
     tools:context=".MainActivity">
 
     <com.example.basic_paint.DrawingView
+        android:layout_margin="5dp"
+        android:background="@drawable/bg"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
