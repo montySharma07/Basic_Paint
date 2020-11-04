@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <com.example.basic_paint.DrawingView
+        android:id="@+id/drawing_view"
         android:layout_margin="5dp"
         android:background="@drawable/bg"
         android:layout_width="0dp"
