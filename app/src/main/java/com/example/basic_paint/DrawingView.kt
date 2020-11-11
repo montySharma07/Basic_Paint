@@ -17,6 +17,8 @@ class DrawingView(context:Context,attrs:AttributeSet):View(context,attrs) {
     private var color=Color.BLACK
     private var canvas:Canvas?=null
     private var mPath=ArrayList<CustomPath>()
+    private var mUndoPath=ArrayList<CustomPath>()
+
 
     init {
         setupDrawing()
@@ -37,6 +39,13 @@ class DrawingView(context:Context,attrs:AttributeSet):View(context,attrs) {
         mCanvasPaint= Paint(Paint.DITHER_FLAG)
         mBrushSize=20.toFloat()
 
+    }
+
+    fun onClickUndo(){
+        if(mPath.size>0){
+            mUndoPath.add(mPath.removeAt(mPath.size-1))
+            invalidate()
+        }
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
